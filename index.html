@@ -3,101 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Abdullah Umair Atta - Programmer, Coder, Student" />
-  <title>Abdullah Umair Atta | Portfolio</title>
-
-  <!-- TailwindCSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS Animation CSS & JS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <title>Abdullah Umair Atta</title>
   <style>
+    /* Background animation */
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #1f1c2c, #928dab);
+      animation: bgMove 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      padding: 100px 20px 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #ffdf6c;
+      margin-top: 0;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.6;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    a {
+      color: #ffdf6c;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.9em;
+    }
+
+    /* Floating bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      animation: float 10s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-50px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.5; }
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffdf6c; }
+      to { text-shadow: 0 0 20px #ffdf6c, 0 0 40px #ffdf6c; }
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body>
 
-  <!-- Navbar -->
-  <nav class="fixed w-full bg-gray-800 bg-opacity-80 backdrop-blur-md p-4 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Abdullah Umair Atta</h1>
-      <div class="space-x-4">
-        <a href="#about" class="hover:text-yellow-400">About</a>
-        <a href="#services" class="hover:text-yellow-400">Services</a>
-        <a href="#contact" class="hover:text-yellow-400">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Floating bubbles for background -->
+  <div class="bubble" style="width:80px; height:80px; left:10%; top:80%; animation-delay: 0s;"></div>
+  <div class="bubble" style="width:50px; height:50px; left:50%; top:60%; animation-delay: 2s;"></div>
+  <div class="bubble" style="width:100px; height:100px; left:80%; top:70%; animation-delay: 4s;"></div>
+  <div class="bubble" style="width:60px; height:60px; left:30%; top:90%; animation-delay: 6s;"></div>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center text-center px-4" style="background: linear-gradient(135deg, #1e293b, #0f172a);" data-aos="fade-up">
-    <div>
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-yellow-400">Abdullah</span></h2>
-      <p class="text-lg md:text-xl text-gray-300 mb-6">Programmer | Coder | Student</p>
-      <a href="#contact" class="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded shadow hover:bg-yellow-500 transition">Contact Me</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="max-w-6xl mx-auto py-16 px-4" data-aos="fade-right">
-    <h3 class="text-3xl font-bold mb-6">About Me</h3>
-    <p class="text-gray-300 leading-relaxed">
-      I am a passionate programmer, coder, and student who loves building software solutions and exploring new technologies. 
-      I strive to write clean, efficient, and scalable code that solves real-world problems.
+  <header>
+    <h1>Abdullah Umair Atta</h1>
+    <h2>CS Student at UET Lahore | Programmer | Coder</h2>
+    <p>
+      Welcome to my personal portfolio website! 🚀<br>
+      I’m passionate about coding, technology, and learning new skills.
+      Currently studying Computer Science at the University of Engineering and Technology, Lahore.
     </p>
+  </header>
+
+  <section>
+    <h2>📧 Contact Me</h2>
+    <p>Email: <a href="mailto:abdullahumairatta@gmail.com">abdullahumairatta@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/923296896448" target="_blank">+92 329 6896448</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/abdullah-umair-atta" target="_blank">linkedin.com/in/abdullah-umair-atta</a></p>
+    <p>GitHub: <a href="https://github.com/abdullah-umair-atta" target="_blank">github.com/abdullah-umair-atta</a></p>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="bg-gray-800 py-16 px-4" data-aos="fade-left">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-6">My Services</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-semibold mb-3">Web Development</h4>
-          <p class="text-gray-300">Building modern, responsive, and user-friendly websites.</p>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-semibold mb-3">Programming Projects</h4>
-          <p class="text-gray-300">Developing software solutions tailored to client needs.</p>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-semibold mb-3">Tech Consulting</h4>
-          <p class="text-gray-300">Helping individuals and businesses with tech guidance and implementation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="max-w-6xl mx-auto py-16 px-4" data-aos="zoom-in">
-    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
-    <p class="mb-4">Let's work together! Reach out via any of the platforms below:</p>
-    <div class="space-y-2">
-      <p>Email: <a href="mailto:abdullahumairatta@gmail.com" class="text-yellow-400 hover:underline">abdullahumairatta@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/923296896448" target="_blank" class="text-yellow-400 hover:underline">+92 329 6896448</a></p>
-      <p>GitHub: <a href="https://github.com/abdullah-umair-atta" target="_blank" class="text-yellow-400 hover:underline">github.com/abdullah-umair-atta</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/abdullah-umair-atta" target="_blank" class="text-yellow-400 hover:underline">linkedin.com/in/abdullah-umair-atta</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-6 text-center text-gray-400">
-    &copy; 2025 Abdullah Umair Atta. All Rights Reserved.
+  <footer>
+    <p>© 2025 Abdullah Umair Atta | All rights reserved.</p>
   </footer>
-
-  <!-- AOS Init -->
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
 </body>
 </html>
