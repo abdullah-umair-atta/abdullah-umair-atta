@@ -1,107 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Umair - Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdullah Umair | Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
     body {
-        background: #0d0d0d;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
         color: white;
-        text-align: center;
+        background: black;
         overflow-x: hidden;
     }
-    header {
-        height: 100vh;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-    }
     #particles-js {
-        position: absolute;
-        top: 0; left: 0;
+        position: fixed;
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: -1;
+        top: 0;
+        left: 0;
     }
-    img.profile {
+    header {
+        text-align: center;
+        padding: 60px 20px 20px;
+    }
+    .profile-pic {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 3px solid cyan;
-        box-shadow: 0 0 20px cyan;
-        margin-bottom: 20px;
-        z-index: 1;
-    }
-    h1 {
-        font-size: 2.5rem;
-        color: cyan;
-        text-shadow: 0 0 10px cyan, 0 0 20px blue;
-        animation: glow 2s ease-in-out infinite alternate;
-        z-index: 1;
+        border: 4px solid #0ff;
+        animation: glow 2s infinite alternate;
     }
     @keyframes glow {
-        from { text-shadow: 0 0 10px cyan, 0 0 20px blue; }
-        to { text-shadow: 0 0 20px cyan, 0 0 40px blue; }
+        from { box-shadow: 0 0 10px #0ff; }
+        to { box-shadow: 0 0 30px #0ff; }
+    }
+    h1 {
+        font-size: 2.5em;
+        margin: 20px 0 10px;
+        color: #0ff;
+        text-shadow: 0 0 10px #0ff;
     }
     .typing {
-        font-size: 1.2rem;
-        color: #fff;
-        margin-top: 10px;
-        z-index: 1;
-        height: 30px;
+        font-size: 1.2em;
+        color: #ccc;
+        border-right: 2px solid #0ff;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
     }
     .services {
-        padding: 50px 20px;
-        background: #111;
-        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
     }
-    .services h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: cyan;
-    }
-    .service-card {
-        background: rgba(255,255,255,0.05);
-        border-radius: 10px;
+    .card {
+        background: rgba(255, 255, 255, 0.05);
         padding: 20px;
-        margin: 15px;
-        box-shadow: 0 0 10px rgba(0,255,255,0.3);
-        transition: transform 0.3s ease;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
-    .service-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(0,255,255,0.6);
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px #0ff;
     }
-    .contact {
-        padding: 50px 20px;
-        background: #0d0d0d;
+    .contact-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
     }
-    .contact a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 20px;
-        color: white;
+    .contact-buttons a {
         text-decoration: none;
-        border: 2px solid cyan;
+        color: white;
+        padding: 10px 20px;
+        border: 2px solid #0ff;
         border-radius: 25px;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 10px cyan;
+        transition: 0.3s;
     }
-    .contact a:hover {
-        background: cyan;
+    .contact-buttons a:hover {
+        background: #0ff;
         color: black;
-        box-shadow: 0 0 20px cyan;
+        box-shadow: 0 0 20px #0ff;
     }
 </style>
 </head>
@@ -110,39 +103,49 @@
 <div id="particles-js"></div>
 
 <header>
-    <img class="profile" src="https://via.placeholder.com/150" alt="Profile Picture">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
     <h1>Abdullah Umair</h1>
     <div class="typing" id="typing"></div>
 </header>
 
-<section class="services">
-    <h2>My Services</h2>
-    <div class="service-card">💻 Web Development</div>
-    <div class="service-card">📱 Mobile App Development</div>
-    <div class="service-card">⚙️ Programming Solutions</div>
+<section>
+    <h2 style="text-align:center;">Services</h2>
+    <div class="services">
+        <div class="card">💻 Web Development</div>
+        <div class="card">📱 Mobile App Development</div>
+        <div class="card">⚙️ Programming & Coding Help</div>
+    </div>
+
+    <div class="contact-buttons">
+        <a href="mailto:abdullahumairatta@gmail.com">Email</a>
+        <a href="https://wa.me/923296896448" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/abdullah-umair" target="_blank">LinkedIn</a>
+    </div>
 </section>
 
-<section class="contact">
-    <h2>Contact Me</h2>
-    <a href="mailto:abdullahumairatta@gmail.com">Email</a>
-    <a href="https://wa.me/923296896448" target="_blank">WhatsApp</a>
-    <a href="https://www.linkedin.com/in/abdullah-umair" target="_blank">LinkedIn</a>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Particles Config -->
 <script>
-    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
-
-    const text = "CS Student at UET Lahore";
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "move": { "speed": 1 },
+        "line_linked": { "enable": true, "color": "#0ff" },
+        "color": { "value": "#0ff" }
     }
-    typeWriter();
+});
+
+// Typing Effect
+const text = "CS Student at UET Lahore";
+let index = 0;
+function typeEffect() {
+    document.getElementById("typing").textContent = text.slice(0, index);
+    index++;
+    if (index <= text.length) {
+        setTimeout(typeEffect, 100);
+    }
+}
+typeEffect();
 </script>
 
 </body>
