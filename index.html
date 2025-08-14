@@ -1,53 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdullah Umair | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Umair - Portfolio</title>
   <style>
-    body { margin:0; font-family:sans-serif; background:black; color:white; text-align:center; }
-    .profile-pic {
-      width:150px; height:150px; border-radius:50%; border:3px solid #0ff;
-      animation: glow 2s infinite alternate;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    @keyframes glow { from { box-shadow:0 0 10px #0ff;} to { box-shadow:0 0 30px #0ff;} }
-    .typing {
-      font-size:1.2em; color:#ccc;
-      border-right:2px solid #0ff; white-space:nowrap; overflow:hidden;
-      display:inline-block; animation: typing 4s steps(30,end) infinite alternate;
+    body {
+      color: white;
+      text-align: center;
+      background: linear-gradient(270deg, #1a1a1a, #333333);
+      background-size: 400% 400%;
+      animation: backgroundMove 10s ease infinite;
     }
-    @keyframes typing { 0% { width:0;} 50% { width:100%; } 100% { width:0; } }
-    .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; margin:50px auto; max-width:800px; }
-    .service-card {
-      background:rgba(255,255,255,0.05); padding:20px; border-radius:15px;
-      border:1px solid #0ff; box-shadow:0 0 15px #0ff55; transition:transform 0.3s,box-shadow 0.3s;
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    .service-card:hover { transform:scale(1.05); box-shadow:0 0 25px #0ff; }
-    .social-links a { margin:10px; color:white; text-decoration:none; }
-    .social-links a:hover { color:#0ff; }
+    header {
+      padding: 50px 20px;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 2.5em;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .service {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      width: 200px;
+      transition: transform 0.3s;
+    }
+    .service:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://drive.google.com/uc?export=view&id=18jjHW4O_QRqk-eOznM8W2CNkow4UISWX" alt="Profile Picture">
+    <h1>Abdullah Umair</h1>
+    <p>CS Student at UET Lahore | Programmer & Coder</p>
+  </header>
 
-<header>
-  <img src="https://drive.google.com/uc?export=view&id=18jjHW4O_QRqk-eOznM8W2CNkow4UISWX" alt="Abdullah Umair" class="profile-pic">
-  <h1><span class="typing">Abdullah Umair</span></h1>
-  <div class="social-links">
-    <a href="mailto:abdullahumairatta@gmail.com">Email</a> |
-    <a href="https://wa.me/923296896448">WhatsApp</a> |
-    <a href="https://github.com/abdullah-umair-atta" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/abdullah-umair-atta/" target="_blank">LinkedIn</a>
-  </div>
-</header>
+  <section>
+    <h2>Services</h2>
+    <div class="services">
+      <div class="service">Web Development</div>
+      <div class="service">Programming in C++/Python</div>
+      <div class="service">Portfolio Websites</div>
+    </div>
+  </section>
 
-<section class="services">
-  <div class="service-card"><strong>💻 Web Development</strong><p>Responsive modern websites</p></div>
-  <div class="service-card"><strong>📱 App Development</strong><p>Cross-platform mobile apps</p></div>
-  <div class="service-card"><strong>🎨 Graphic Design</strong><p>Branding & digital visuals</p></div>
-  <div class="service-card"><strong>🛠 Tech Consulting</strong><p>Software & tool guidance</p></div>
-</section>
-
-<!-- Insert your other content or footer here -->
-
+  <footer>
+    <p>📧 Email: <a href="mailto:abdullahumairatta@gmail.com">abdullahumairatta@gmail.com</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/923296896448">+92 329 6896448</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/abdullah-umair-atta">LinkedIn Profile</a></p>
+    <p>💻 GitHub: <a href="https://github.com/abdullah-umair-atta">GitHub Profile</a></p>
+  </footer>
 </body>
 </html>
