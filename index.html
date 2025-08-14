@@ -1,154 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abdullah Umair | Portfolio</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
 <style>
     body {
         margin: 0;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
         color: white;
-        background: black;
+        text-align: center;
         overflow-x: hidden;
     }
-    #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        top: 0;
-        left: 0;
-    }
     header {
-        text-align: center;
-        padding: 60px 20px 20px;
+        padding: 50px 20px;
     }
     .profile-pic {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 4px solid #0ff;
+        border: 3px solid #00f7ff;
+        box-shadow: 0 0 20px #00f7ff;
         animation: glow 2s infinite alternate;
     }
     @keyframes glow {
-        from { box-shadow: 0 0 10px #0ff; }
-        to { box-shadow: 0 0 30px #0ff; }
+        from { box-shadow: 0 0 10px #00f7ff; }
+        to { box-shadow: 0 0 25px #00f7ff; }
     }
     h1 {
         font-size: 2.5em;
-        margin: 20px 0 10px;
-        color: #0ff;
-        text-shadow: 0 0 10px #0ff;
+        margin-top: 15px;
     }
     .typing {
-        font-size: 1.2em;
-        color: #ccc;
-        border-right: 2px solid #0ff;
+        border-right: 2px solid #fff;
         white-space: nowrap;
         overflow: hidden;
-        height: 1.4em;
-        margin-top: 6px;
+        display: inline-block;
+        animation: typing 4s steps(30, end) infinite alternate;
     }
-    section {
-        padding: 40px 20px;
-        max-width: 1000px;
-        margin: auto;
+    @keyframes typing {
+        0% { width: 0; }
+        50% { width: 100%; }
+        100% { width: 0; }
     }
+    .social-links a {
+        color: white;
+        text-decoration: none;
+        margin: 10px;
+        font-size: 1.2em;
+        transition: color 0.3s;
+    }
+    .social-links a:hover {
+        color: #00f7ff;
+    }
+    /* Services Section */
     .services {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
     }
-    .card {
+    .service-card {
         background: rgba(255, 255, 255, 0.05);
         padding: 20px;
         border-radius: 15px;
-        backdrop-filter: blur(5px);
+        border: 1px solid #00f7ff;
+        box-shadow: 0 0 15px #00f7ff55;
         transition: transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 20px #0ff;
+    .service-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #00f7ff;
     }
-    .contact-buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 30px;
-    }
-    .contact-buttons a {
-        text-decoration: none;
-        color: white;
-        padding: 10px 20px;
-        border: 2px solid #0ff;
-        border-radius: 25px;
-        transition: 0.3s;
-    }
-    .contact-buttons a:hover {
-        background: #0ff;
-        color: black;
-        box-shadow: 0 0 20px #0ff;
+    .service-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #00f7ff;
     }
 </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
-
 <header>
-    <!-- Replace with your real image URL when you have it -->
-    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+    <img src="https://drive.google.com/uc?export=view&id=18jjHW4O_QRqk-eOznM8W2CNkow4UISWX" alt="Profile Picture" class="profile-pic">
     <h1>Abdullah Umair</h1>
-    <div class="typing" id="typing"></div>
+    <p class="typing">CS Student at UET Lahore | Programmer | Coder</p>
+    <div class="social-links">
+        <a href="mailto:abdullahumairatta@gmail.com">Email</a> |
+        <a href="https://wa.me/923296896448">WhatsApp</a> |
+        <a href="https://github.com/abdullah-umair-atta">GitHub</a> |
+        <a href="https://www.linkedin.com/in/abdullah-umair-atta">LinkedIn</a>
+    </div>
 </header>
 
 <section>
-    <h2 style="text-align:center;">Services</h2>
+    <h2>🚀 My Services</h2>
     <div class="services">
-        <div class="card">💻 Web Development</div>
-        <div class="card">📱 Mobile App Development</div>
-        <div class="card">⚙️ Programming & Coding Help</div>
-    </div>
-
-    <div class="contact-buttons">
-        <a href="mailto:abdullahumairatta@gmail.com">Email</a>
-        <a href="https://wa.me/923296896448" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/abdullah-umair-atta/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/abdullah-umair-atta" target="_blank" rel="noopener">GitHub</a>
+        <div class="service-card">
+            <div class="service-title">💻 Web Development</div>
+            <p>Responsive, modern websites with smooth animations.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-title">📱 App Development</div>
+            <p>Cross-platform mobile apps with clean UI & UX.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-title">🎨 Graphic Design</div>
+            <p>Creative designs for branding & digital presence.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-title">🛠 Tech Consulting</div>
+            <p>Guidance on software, tools, and IT solutions.</p>
+        </div>
     </div>
 </section>
-
-<!-- Particles Config -->
-<script>
-particlesJS("particles-js", {
-    "particles": {
-        "number": { "value": 80 },
-        "size": { "value": 3 },
-        "move": { "speed": 1 },
-        "line_linked": { "enable": true, "color": "#0ff" },
-        "color": { "value": "#0ff" }
-    }
-});
-
-// Typing Effect
-const text = "CS Student at UET Lahore";
-let index = 0;
-function typeEffect() {
-    document.getElementById("typing").textContent = text.slice(0, index);
-    index++;
-    if (index <= text.length) setTimeout(typeEffect, 100);
-}
-typeEffect();
-</script>
 
 </body>
 </html>
