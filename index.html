@@ -54,6 +54,8 @@
         border-right: 2px solid #0ff;
         white-space: nowrap;
         overflow: hidden;
+        height: 1.4em;
+        margin-top: 6px;
     }
     section {
         padding: 40px 20px;
@@ -103,6 +105,7 @@
 <div id="particles-js"></div>
 
 <header>
+    <!-- Replace with your real image URL when you have it -->
     <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
     <h1>Abdullah Umair</h1>
     <div class="typing" id="typing"></div>
@@ -118,8 +121,9 @@
 
     <div class="contact-buttons">
         <a href="mailto:abdullahumairatta@gmail.com">Email</a>
-        <a href="https://wa.me/923296896448" target="_blank">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/abdullah-umair" target="_blank">LinkedIn</a>
+        <a href="https://wa.me/923296896448" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/abdullah-umair-atta/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/abdullah-umair-atta" target="_blank" rel="noopener">GitHub</a>
     </div>
 </section>
 
@@ -141,6 +145,13 @@ let index = 0;
 function typeEffect() {
     document.getElementById("typing").textContent = text.slice(0, index);
     index++;
+    if (index <= text.length) setTimeout(typeEffect, 100);
+}
+typeEffect();
+</script>
+
+</body>
+</html>    index++;
     if (index <= text.length) {
         setTimeout(typeEffect, 100);
     }
